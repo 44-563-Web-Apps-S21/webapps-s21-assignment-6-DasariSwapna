@@ -4,50 +4,110 @@
     <title>Playing with Javascript</title>
   </head>
 
-  <body>
+   <body>
     <h1>Hidden things by Swapna Dasari</h1>
 
     <h2>Getting input</h2>
 
     <form>
-      <label for="form1_age">What is your age </label>
+      <label style="font-size: 20px" for="pwd">Enter the secret word</label>
       <input
-        type="number"
-        id="form1_age"
-        name="form1_age"
-        min="10"
-        max="50"
-        step="2"
-        value="30"
-      />
-      <br />
+        type="password"
+        id="pwd"
+        value="Secret"
+        name="pwd"
+        minlength="8"
+      /><br /><br />
 
-      <label for="form1_nick">What is your nickname </label>
-      <input type="text" id="form1_nick" name="form1_nick" autofocus /> <br />
-
+      <label style="font-size: 20px" for="guess">Enter the guess</label>
+      <input  style="margin-left: 45px" type="text" id="guess" name="guess" /><br />
+      <br /><br />
       <input
+       
         type="button"
-        onclick="resolveForm()"
-        value="Get values from form"
+        onclick="processGuess()"
+        value="Check the guess"
       />
     </form>
+   
+   <div style="display: flex;">
 
-    <p id="result">This text will be replaced</p>
 
+<p  id="result">This text will be replaced    
+     
+
+    </p> 
+    <p>Clicks: <a id="clicks">0</a></p>
+  </div>
     <script>
-      function resolveForm() {
-        console.log("Getting form values");
-        age = document.getElementById("form1_age").value;
-        nick = document.getElementById("form1_nick").value;
-        confirmed = confirm("Are these the values? " + age + " and " + nick);
+      let correct = 0;
+      let wrong = 0;
+      let clicks = 0;
+      function processGuess() {
+       
+        console.log("Getting password and guess values");
+        passwordValue = document.getElementById("pwd").value;
+        wrongValue = document.getElementById("guess").value;
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
 
-        out = document.getElementById("result");
-        if (confirmed) {
-          out.innerHTML = "Values were confirmed";
+     
+        if (passwordValue == wrongValue) {
+          alert("Congratulations");
+        
+        
         } else {
-          out.innerHTML = "Values were not confirmed";
+          alert("Sorry");
+        
+        
         }
+       
       }
+      
     </script>
-  </body>
+
+
+
+<div id="container">
+  <img  onclick="rotateImage()" 
+  src="indian_elephant.jpeg" alt="your_keyword" width="200" height="200" id="getImage"  />
+<div>
+
+
+<script>
+  let currentImage=0
+  var Image_Id = document.getElementById('getImage');
+  function  rotateImage(pic){
+    console.log(currentImage)
+   
+  switch (currentImage) {
+  case 0:
+  currentImage=1;
+  Image_Id.src='puppy.jpeg';
+   break;
+   case 1:
+   currentImage=2;
+   Image_Id.src='indian_elephant.jpeg';
+   break;
+   case 2:
+   currentImage=3;
+   Image_Id.src='RaggleRat.jpeg';
+   break;
+   default:
+   alert("No imge was loaded");
+}
+  
+ 
+  
+}
+
+
+
+
+</script>
+  </body> 
+
+
+
+ 
 </html>
