@@ -7,7 +7,7 @@
   <body>
     <h1>Pass phrase by Swapna Dasari</h1>
 
-    <h2>Getting input</h2>
+  
 
     <form>
       <label style="font-size: 20px" for="pwd">Enter the secret phrase</label>
@@ -31,28 +31,29 @@
     </form>
 
     <div style="display: flex">
-      <p>Access Allowed Clicks Count: <a id="clicks">0</a></p>
+     
+      <p id="result">This text will be replaced </p>
     </div>
     <script>
       let correct = 0;
       let wrong = 0;
-      let clicks = 0;
+     
       function processPhrase() {
         console.log("Getting password and guess values");
         passwordValue = document.getElementById("pwd").value;
         phraseValue = document.getElementById("phrase").value;
+        out = document.getElementById("result")
         if (passwordValue == phraseValue) {
           alert("Access allowed");
           correct = correct + 1;
-          clicks += 1;
-          document.getElementById("clicks").innerHTML = clicks;
-          console.log("correct", correct);
+          out.innerHTML = "correct: " +correct + "   "+"wrong: "+ wrong
         } else {
           alert("Access denied");
           wrong = wrong + 1;
           console.log("wrong", wrong);
+          out.innerHTML = "wrong: "+wrong + "  "+ "correct: " +correct
         }
-        var correct = document.getElementById("clicks");
+       
       }
     </script>
   </body>
