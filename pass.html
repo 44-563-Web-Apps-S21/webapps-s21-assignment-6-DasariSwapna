@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Playing with Javascript</title>
+  </head>
+
+  <body>
+    <h1>Pass phrase by Swapna Dasari</h1>
+
+    <h2>Getting input</h2>
+
+    <form>
+      <label style="font-size: 20px" for="pwd">Enter the secret phrase</label>
+      <input
+        type="password"
+        id="pwd"
+        value="Let me in"
+        name="pwd"
+        minlength="8"
+      /><br /><br />
+
+      <label style="font-size: 20px" for="phrase">Enter a phrase</label>
+      <input
+        style="margin-left: 45px"
+        type="text"
+        id="phrase"
+        name="phrase"
+      /><br />
+      <br /><br />
+      <input type="button" onclick="processPhrase()" value="Check the phrase" />
+    </form>
+
+    <div style="display: flex">
+      <p>Access Allowed Clicks Count: <a id="clicks">0</a></p>
+    </div>
+    <script>
+      let correct = 0;
+      let wrong = 0;
+      let clicks = 0;
+      function processPhrase() {
+        console.log("Getting password and guess values");
+        passwordValue = document.getElementById("pwd").value;
+        phraseValue = document.getElementById("phrase").value;
+        if (passwordValue == phraseValue) {
+          alert("Access allowed");
+          correct = correct + 1;
+          clicks += 1;
+          document.getElementById("clicks").innerHTML = clicks;
+          console.log("correct", correct);
+        } else {
+          alert("Access denied");
+          wrong = wrong + 1;
+          console.log("wrong", wrong);
+        }
+        var correct = document.getElementById("clicks");
+      }
+    </script>
+  </body>
+</html>
