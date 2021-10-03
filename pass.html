@@ -56,5 +56,34 @@
        
       }
     </script>
+
+<div id="container">
+  <img  onclick="newImage()" 
+  src="indian_elephant.jpeg" alt="your_keyword" width="200" height="200" id="getImage"  />
+<div>
+<script>
+  let usingImage=1
+  var Image_Id = document.getElementById('getImage');
+  function  newImage(pic){
+    console.log(usingImage)
+   
+  switch (usingImage) {
+  case 1:
+  usingImage=2;
+  Image_Id.src='puppy.jpeg';
+   break;
+   case 2:
+   usingImage=3;
+   Image_Id.src='RaggleRat.jpeg';
+   break;
+   case 3:
+   usingImage=1;
+   Image_Id.src='indian_elephant.jpeg';
+   break;
+   default:
+   alert("No imge was loaded");
+} 
+}
+</script>
   </body>
 </html>
