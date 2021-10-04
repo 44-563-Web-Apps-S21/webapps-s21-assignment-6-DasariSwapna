@@ -3,12 +3,8 @@
   <head>
     <title>Playing with Javascript</title>
   </head>
-
   <body>
     <h1>Pass phrase by Swapna Dasari</h1>
-
-  
-
     <form>
       <label style="font-size: 20px" for="pwd">Enter the secret phrase</label>
       <input
@@ -18,7 +14,6 @@
         name="pwd"
         minlength="8"
       /><br /><br />
-
       <label style="font-size: 20px" for="phrase">Enter a phrase</label>
       <input
         style="margin-left: 45px"
@@ -31,7 +26,8 @@
     </form>
 
     <div style="display: flex">
-     
+ 
+
       <p id="result">This text will be replaced </p>
     </div>
     <script>
@@ -50,13 +46,22 @@
         } else {
           alert("Access denied");
           wrong = wrong + 1;
-          console.log("wrong", wrong);
-          out.innerHTML = "wrong: "+wrong + "  "+ "correct: " +correct
-        }
        
+          out.innerHTML = "wrong: "+ wrong + "  "+ "correct: " +correct
+        
+        }
+      
       }
-    </script>
+          let wrong;
+         console.log("wrong",wrong)
+         wrong == 4 ? lockedFunction() : processPhrase();
 
+      function  lockedFunction(){
+        alert("account locked.");
+      }
+
+
+    </script>
 <div id="container">
   <img  onclick="newImage()" 
   src="indian_elephant.jpeg" alt="your_keyword" width="200" height="200" id="getImage"  />
